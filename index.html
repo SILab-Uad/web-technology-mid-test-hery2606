@@ -17,7 +17,7 @@
 
         <h3>Select criteria:</h3>
         <!-- TODO: Create checkboxes for including uppercase, lowercase, numbers, and special characters -->
-       <div class="label">
+       <div>
         <label>
             <input type="checkbox" id="includeUppercase"> Include Uppercase
         </label><br>
@@ -34,18 +34,17 @@
         </div>
         
         <!-- TODO: Create a button to generate the password -->
-       <div class="button">
+       
         <button id="generateBtn">Generate Password</button>
-    </div>
-        <!-- TODO: Create a text field to display the generated password -->
-        <p id="passwordOutput"></p>
 
+        <!-- TODO: Create a text field to display the generated password -->
+        <label for="passwordOutput">Generated Password:</label>
+        <input type="text" id="passwordOutput" readonly>
         <!-- BONUS: Add a "Copy to Clipboard" button -->
         <button id="copyBtn">Copy to Clipboard</button>
     </div>
-    
 
-    <script src="script.js"></script>
-    <script src="dom.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module"src="dom.js"></script>
 </body>
 </html>

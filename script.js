@@ -1,4 +1,4 @@
-const generatePassword = (length, options) => {
+export const generatePassword = (length, options) => {
     // Character sets for password generation
     const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -17,8 +17,7 @@ if (options.includeNumbers) charSet += numbers;
 if (options.includeSpecialChars) charSet += specialChars;
 
 if (charSet === "") {
-    alert("Please select at least one option for the password.");
-    return "";
+   throw new Error("At least one character type must be selected.");
 }
 
 let password = "";
@@ -29,19 +28,3 @@ for (let i = 0; i < length; i++) {
 
 return password;
 };
-
-document.getElementById('generateBtn').addEventListener('click', () => {
-    const length = parseInt(document.getElementById('length').value, 10);
-    const options = {
-        includeUppercase: document.getElementById('includeUppercase').checked,
-        includeLowercase: document.getElementById('includeLowercase').checked,
-        includeNumbers: document.getElementById('includeNumbers').checked,
-        includeSpecialChars: document.getElementById('includeSpecialChars').checked,
-    };
-
-    const password = generatePassword(length, options);
-    document.getElementById('passwordOutput').textContent = password;
-
-});
-
-;
